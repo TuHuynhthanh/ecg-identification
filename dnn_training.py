@@ -71,10 +71,10 @@ def main():
                                       model_dir=model_path)
     sktools.save_classifer(classifier, labels)
     # fit and save model
-    print "\nDisplaying DNN training flow:"
-    print "training started"
+    print( "\nDisplaying DNN training flow:")
+    print( "training started")
     classifier.fit(train_inputs, train_targets, steps=num_epochs, batch_size=1)
-    print "training finished"
+    print( "training finished")
 
     # accuracy evaluation
     train_outputs = classifier.predict(train_inputs)
@@ -90,10 +90,10 @@ def main():
     # displaying predictions (for debug and details estimation)
     test_outputs = classifier.predict(test_inputs)
     if DISPLAY_PREDICTIONS:
-        print "\nDisplaying DNN prediction"
-        print "predicted:  expected:"
+        print("\nDisplaying DNN prediction")
+        print("predicted:  expected:")
         for i in xrange(len(test_outputs)):
-            print labels[test_outputs[i].astype(int)], labels[test_targets[i].astype(int)]
+            print(labels[test_outputs[i].astype(int)], labels[test_targets[i].astype(int)])
 
 
 if __name__ == '__main__':
